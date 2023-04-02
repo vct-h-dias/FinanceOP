@@ -1,3 +1,5 @@
+/*Paleta*/
+
 html {
   /*Purple Theme*/
   --Black2: #040307;
@@ -27,6 +29,8 @@ body {
   min-height: 100vh;
   background-color: var(--Black1);
 }
+
+/*Cabeçalho*/
 
 header {
   min-height: 7vh;
@@ -59,6 +63,8 @@ header .logo {
 header .div_logo h1 {
   font-size: 3.5rem;
 }
+
+/*Underline*/
 
 .hover-underline-animation {
   display: inline-block;
@@ -106,6 +112,8 @@ header .signup:hover {
   transition: all 0.3s;
   background-color: var(--Purple3);
 }
+
+/*Corpo*/
 
 .container_home {
   min-height: 93vh;
@@ -176,6 +184,8 @@ header .signup:hover {
   right: 450px;
 }
 
+/*Footer*/
+
 footer {
   min-height: 10vh;
   display: flex;
@@ -187,6 +197,8 @@ footer {
 footer .div_createdby a {
   color: var(--Lilac);
 }
+
+/*Responsividade MQ*/
 
 @media (max-width: 768px) {
   header {
