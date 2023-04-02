@@ -19,6 +19,10 @@ html {
   --Yellow1: #e5c51d;
 }
 
+body {
+  background-color: var(--Black1);
+}
+
 .father {
   min-height: 100vh;
   background-color: var(--Black1);
@@ -105,11 +109,25 @@ header .signup:hover {
 
 .container_home {
   min-height: 93vh;
+  max-height: 93vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
+}
+
+.no_select_image {
+  -webkit-user-drag: none; /* Safari */
+  -khtml-user-drag: none; /* Konqueror HTML */
+  -moz-user-drag: none; /* Old versions of Firefox */
+  -o-user-drag: none; /* Old versions of Opera */
+}
+
+.container_home .home_img4 {
+  position: absolute;
+  top: 35px;
+  left: 390px;
 }
 
 .container_home .home_img1 {
@@ -136,7 +154,7 @@ header .signup:hover {
 }
 
 .container_home .home_button {
-  padding: 2rem 1rem;
+  margin-top: 3rem;
 }
 
 .container_home .home_button .home_button_link {
@@ -159,6 +177,24 @@ header .signup:hover {
   left: 90px;
 }
 
+.container_home .home_img3 {
+  position: absolute;
+  bottom: 90px;
+  right: 450px;
+}
+
+footer {
+  min-height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Purple4);
+}
+
+footer .div_createdby a {
+  color: var(--Lilac);
+}
+
 @media (max-width: 768px) {
   header {
     position: relative;
@@ -172,24 +208,78 @@ header .signup:hover {
     margin-left: 50%;
     transform: translate(-50%);
   }
+
+  .container_home .home_text h1 {
+    font-size: 3rem;
+  }
+
+  .container_home .home_text h6 {
+    font-size: 1.5rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+  }
+
+  .container_home .home_button .home_button_link {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--White);
+    padding: 1.2rem 2rem;
+    border-radius: 0.9rem;
+    background-color: var(--Purple1);
+  }
+}
+
+@media (max-width: 566px) {
+  .container_home .home_text h6 {
+    font-size: 1.2rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+  }
+}
+
+@media (max-width: 440px) {
+  .container_home .home_text h1 {
+    font-size: 2rem;
+  }
+
+  .container_home .home_text h6 {
+    font-size: 0.9rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+  }
+
+  .container_home .home_button .home_button_link {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--White);
+    padding: 1rem 1.8rem;
+    border-radius: 0.9rem;
+    background-color: var(--Purple1);
+  }
 }
 
 @media (max-width: 1588px) {
-    .container_home .home_img1 {
-        top: 0;
-        right: 0;
-    }
-    .container_home .home_img2 {
-        bottom: 0;
-        left: 0;
-    }
+  .container_home .home_img1 {
+    top: 0;
+    right: 0;
+  }
+  .container_home .home_img2 {
+    bottom: 0;
+    left: 0;
+  }
 }
 
 @media (max-width: 1400px) {
-    .container_home .home_img1 {
-        display: none;
-    }
-    .container_home .home_img2 {
-        display: none;
-    }
+  .container_home .home_img1 {
+    display: none;
+  }
+  .container_home .home_img2 {
+    display: none;
+  }
+  .container_home .home_img3 {
+    display: none;
+  }
+  .container_home .home_img4 {
+    display: none;
+  }
 }
