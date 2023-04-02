@@ -117,13 +117,6 @@ header .signup:hover {
   position: relative;
 }
 
-.no_select_image {
-  -webkit-user-drag: none; /* Safari */
-  -khtml-user-drag: none; /* Konqueror HTML */
-  -moz-user-drag: none; /* Old versions of Firefox */
-  -o-user-drag: none; /* Old versions of Opera */
-}
-
 .container_home .home_img4 {
   position: absolute;
   top: 35px;

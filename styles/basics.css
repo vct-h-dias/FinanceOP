@@ -18,6 +18,15 @@ input[type="submit"] {
   cursor: pointer;
 }
 
+
+/*para não poder selecionar imagens*/
+.no_select_image {
+    -webkit-user-drag: none; /* Safari */
+    -khtml-user-drag: none; /* Konqueror HTML */
+    -moz-user-drag: none; /* Old versions of Firefox */
+    -o-user-drag: none; /* Old versions of Opera */
+  }
+
 html {
     /*Purple Theme*/
     --Black2: #040307;
@@ -38,6 +47,6 @@ html {
     --Red1: #E85B54;
     
     font-size: 62.5%;
-    font-family: "Inter", BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: "Inter", "Poppins", "Source Sans Pro", BlinkMacSystemFont, Segoe UI, Ubuntu, sans-serif;
 
 }
