@@ -8,19 +8,36 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: var(--White2);
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    text-decoration: none;
+    list-style: none;
+    color: var(--White);
 }
 
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
 
 html {
-    /*White Theme*/
-    --White1: #ffffff;
-    --White2: #f0f8ff;
-    --Gray1: #e5e5e5;
-    --Gray2: #dcdcdd;
-    --Blue1: #14213d;
-    --Blue2: #118ab2;
-  
+    /*Purple Theme*/
+    --Black2: #040307;
+    --White: #ecebf1;
+    --Purple1: #9668F5;
+    --Purple2: #6E4FEF;
+    --Purple3: #5740A0;
+    --Purple4: #2A293E;
+    --Purple5: #362A60;
+    
     /*Black Theme*/
+    --Black1: #0F0F12;
+    --Lilac: #C4A6C8;
+    --Blue1: #454362;
+    --Blue2: #8D8AD3;
+    --Green1: #55BD94;
+    --Gray1: #808080;
+    --Red1: #E85B54;
+    
+    font-size: 62.5%;
+    font-family: "Inter", BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
 }
