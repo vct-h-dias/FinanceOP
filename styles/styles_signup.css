@@ -1,0 +1,23 @@
+/*Paleta*/
+
+html {
+    /*Purple Theme*/
+    --Black2: #040307;
+    --White: #ecebf1;
+    --Purple1: #9668f5;
+    --Purple2: #6e4fef;
+    --Purple3: #5740a0;
+    --Purple4: #2a293e;
+    --Purple5: #362a60;
+  
+    /*Black Theme*/
+    --Black1: #0f0f12;
+    --Lilac: #c4a6c8;
+    --Blue1: #454362;
+    --Blue2: #8d8ad3;
+    --Green1: #55bd94;
+    --Gray1: #808080;
+    --Red1: #e85b54;
+    --Yellow1: #e5c51d;
+  }
+  

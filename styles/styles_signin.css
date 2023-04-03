@@ -1,0 +1,128 @@
+/*Paleta*/
+
+html {
+  /*Purple Theme*/
+  --Black2: #040307;
+  --White: #ecebf1;
+  --Purple1: #9668f5;
+  --Purple2: #6e4fef;
+  --Purple3: #5740a0;
+  --Purple4: #2a293e;
+  --Purple5: #362a60;
+
+  /*Black Theme*/
+  --Black1: #0f0f12;
+  --Lilac: #c4a6c8;
+  --Blue1: #454362;
+  --Blue2: #8d8ad3;
+  --Green1: #55bd94;
+  --Gray1: #808080;
+  --Red1: #e85b54;
+  --Yellow1: #e5c51d;
+}
+
+.container_forms {
+  min-height: 93vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--White);
+  padding: 2rem 2rem 2rem 3rem;
+  border-radius: 5px;
+}
+
+form h1 {
+  font-size: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: var(--Black1);
+}
+
+form span {
+    color: var(--Black1);
+    border-bottom: 4px solid var(--Purple2);    
+    border-radius: 2px;
+}
+
+form a {
+  color: var(--Purple4);
+  text-align: right;
+  font-size: 1.4rem;
+  margin-right: 2rem;
+}
+
+form a:hover {
+  transition: all 0.15s;
+  color: var(--Purple2);
+}
+
+.container_forms .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.container_forms .form-group label {
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--Black1);
+}
+
+.container_forms .form-group .form-control {
+  margin-top: 0.3rem;
+}
+
+.input-control {
+  display: flex;
+}
+
+#show-password-btn {
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
+.container_forms .form-group input[type="text"] {
+  margin-right: 2rem;
+}
+
+.container_forms .form-group input[type="text"],
+.container_forms .form-group input[type="password"] {
+  color: var(--Black1);
+  background-color: var(--White);
+  outline: none;
+  border: none;
+  border-bottom: 2px solid black;
+  padding: 1rem;
+  width: 50rem;
+}
+
+.container_forms .form-group input[type="text"]:focus,
+.container_forms .form-group input[type="password"]:focus {
+  transition: all 0.4s;
+  border-bottom: 2px solid var(--Blue2);
+}
+
+.container_forms input[type="submit"] {
+  padding: 1.2rem 15rem;
+  font-size: 1.7rem;
+  background-color: var(--Purple2);
+  border: none;
+  border-radius: 15px;
+  color: var(--White);
+  margin-top: 3rem;
+}
+
+.container_forms input[type="submit"]:hover {
+  transition: all 0.3s;
+  background-color: var(--Purple1);
+  color: var(--White);
+}
