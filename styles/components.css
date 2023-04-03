@@ -106,14 +106,14 @@ header li {
 header .signup {
   background-color: var(--Purple1);
   border-radius: 5px;
+  padding: 0.7rem 0.9rem;
 }
 
-header .signup li {
-    padding: 0.7rem 0.9rem;
+header .signup a {
     border-radius: 5px;
 }
 
-header .signup:hover, header .signup li:hover {
+header .signup:hover, header .signup a:hover {
   transition: all 0.3s;
   background-color: var(--Green1);
   color: var(--Black2);
