@@ -53,13 +53,17 @@ form span {
   border-radius: 2px;
 }
 
-form a {
-  color: var(--Purple4);
+form  .control-btn{
   text-align: right;
-  font-size: 1.4rem;
   margin-right: 2rem;
   margin-top: 1rem;
+}
+
+form a {
+  color: var(--Purple4);
+  font-size: 1.4rem;
   font-weight: 500;
+
 }
 
 form a:hover {
@@ -91,6 +95,7 @@ form a:hover {
   background-color: transparent;
   outline: none;
   border: none;
+  width: 20px;
 }
 
 .container_forms .form-group input[type="text"] {
@@ -128,4 +133,65 @@ form a:hover {
   transition: all 0.3s;
   background-color: var(--Purple1);
   color: var(--White);
+}
+
+.no_account {
+  margin-left: .6rem;
+  margin-top: 2rem;
+}
+
+
+@media (max-width: 768px) {
+  
+  form h1 {
+    font-size: 2.5rem;
+  }
+  
+  .container_forms .form-group label {
+    font-size: 1.6rem;
+  }
+  
+  .container_forms .form-group input[type="text"],
+  .container_forms .form-group input[type="password"] {
+    width: 35rem;
+  }
+  
+  .container_forms input[type="submit"] {
+    padding: 1.2rem 11rem;
+    font-size: 1.4rem;
+  } 
+}
+
+@media (max-width: 566px) {
+
+  form {
+    padding: 1rem 1rem 1rem 2rem;
+  }
+
+  form h1 {
+    font-size: 2.3rem;
+  }
+  
+  .container_forms .form-group label {
+    font-size: 1.5rem;
+  }
+
+  form a {
+    font-size: 1.2rem;
+  }
+  
+  .container_forms .form-group input[type="text"],
+  .container_forms .form-group input[type="password"] {
+    width: 22rem;
+  }
+  
+  .container_forms input[type="submit"] {
+    padding: 1.2rem 5rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  } 
+
+  #show-password-btn {
+   width: 15px;
+  }
 }
