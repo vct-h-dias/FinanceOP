@@ -79,6 +79,7 @@ form a:hover {
 }
 
 .container_forms .form-group label {
+  margin-top: 1.5rem;
   font-size: 2rem;
   font-weight: 500;
   color: var(--Black1);
@@ -102,6 +103,10 @@ form a:hover {
 .container_forms .form-group input[type="text"],
 .container_forms .form-group input[type="email"]{
   margin-right: 2rem;
+}
+
+.password-input {
+  margin-right: 0 !important;
 }
 
 .container_forms .form-group input[type="text"],
@@ -139,6 +144,10 @@ form a:hover {
   color: var(--White);
 }
  
+.eye-slash {
+  width: 20px;
+}
+
 @media (max-width: 768px) {
   
   form h1 {
@@ -191,7 +200,7 @@ form a:hover {
     font-size: 1.2rem;
   } 
 
-  #show-password-btn, #show-password-btn2 {
+  #show-password-btn, #show-password-btn2, .eye-slash {
    width: 15px;
   }
 }
