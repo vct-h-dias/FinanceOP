@@ -1,34 +1,34 @@
 /*Paleta*/
 
 html {
-    /*Purple Theme*/
-    --Black2: #040307;
-    --White: #ecebf1;
-    --Purple1: #9668f5;
-    --Purple2: #6e4fef;
-    --Purple3: #5740a0;
-    --Purple4: #2a293e;
-    --Purple5: #362a60;
-  
-    /*Black Theme*/
-    --Black1: #0f0f12;
-    --Lilac: #c4a6c8;
-    --Blue1: #454362;
-    --Blue2: #8d8ad3;
-    --Green1: #55bd94;
-    --Gray1: #808080;
-    --Red1: #e85b54;
-    --Yellow1: #e5c51d;
-  }
-  
-  body {
-    background-color: var(--Black1);
-  }
-  
-  .father {
-    min-height: 100vh;
-    background-color: var(--Black1);
-  }
+  /*Purple Theme*/
+  --Black2: #040307;
+  --White: #ecebf1;
+  --Purple1: #9668f5;
+  --Purple2: #6e4fef;
+  --Purple3: #5740a0;
+  --Purple4: #2a293e;
+  --Purple5: #362a60;
+
+  /*Black Theme*/
+  --Black1: #0f0f12;
+  --Lilac: #c4a6c8;
+  --Blue1: #454362;
+  --Blue2: #8d8ad3;
+  --Green1: #55bd94;
+  --Gray1: #808080;
+  --Red1: #e85b54;
+  --Yellow1: #e5c51d;
+}
+
+body {
+  background-color: var(--Black1);
+}
+
+.father {
+  min-height: 100vh;
+  background-color: var(--Black1);
+}
 
 /*Cabeçalho*/
 
@@ -110,13 +110,31 @@ header .signup {
 }
 
 header .signup a {
-    border-radius: 5px;
+  border-radius: 5px;
 }
 
-header .signup:hover, header .signup a:hover {
+header .signup:hover,
+header .signup a:hover {
   transition: all 0.3s;
   background-color: var(--Green1);
   color: var(--Black2);
+}
+
+.bars-solid {
+  width: 30px;
+  fill: var(--White);
+}
+
+.checkbtn {
+  color: white;
+  float: right;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
 }
 
 /*Footer*/
@@ -130,10 +148,10 @@ footer {
 }
 
 footer .div_createdby {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 footer .div_createdby a {
@@ -145,15 +163,71 @@ footer .div_createdby a {
 @media (max-width: 768px) {
   header {
     position: relative;
-  }
-
-  header ul {
-    display: none;
+    z-index: 1;
   }
 
   header .a_logo {
-    margin-left: 50%;
-    transform: translate(-50%);
+    margin-left: 40px;
+  }
+
+  .checkbtn {
+    display: block;
+  }
+
+  ul {
+    position: fixed;
+    width: 100%;
+    height: 95vh;
+    background-color: var(--Black1);
+    top: 6rem;
+    left: -100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s;
+  }
+
+  header ul li {
+    display: block;
+    margin: 50px 0;
+  }
+
+  .control-checked {
+    display: inline-block;
+    position: relative;
+    color: var(--White);
+    padding: 0 !important;
+  }
+
+  .control-checked::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--White);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  .control-checked:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  header ul a,
+  .signup {
+    display: block;
+    background-color: transparent !important;
+  }
+  
+  .signup:hover {
+    color: var(--White) !important;
+  }
+
+  #check:checked ~ ul {
+    left: 0;
   }
 
   footer .div_createdby {
@@ -170,5 +244,17 @@ footer .div_createdby a {
 @media (max-width: 440px) {
   footer .div_createdby {
     font-size: 0.5rem;
+  }
+}
+
+@media (max-height: 854px) {
+  ul {
+    top: 5.5rem;
+  }
+}
+
+@media (max-height: 795px) {
+  ul {
+    top: 5rem;
   }
 }

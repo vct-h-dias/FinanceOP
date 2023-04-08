@@ -220,19 +220,6 @@ html {
 }
 
 @media (max-width: 768px) {
-  header {
-    position: relative;
-  }
-
-  header ul {
-    display: none;
-  }
-
-  header .a_logo {
-    margin-left: 50%;
-    transform: translate(-50%);
-  }
-
   .container_home .home_text h1 {
     font-size: 3rem;
   }
