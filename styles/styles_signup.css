@@ -1,0 +1,206 @@
+/*Paleta*/
+
+html {
+    /*Purple Theme*/
+    --Black2: #040307;
+    --White: #ecebf1;
+    --Purple1: #9668f5;
+    --Purple2: #6e4fef;
+    --Purple3: #5740a0;
+    --Purple4: #2a293e;
+    --Purple5: #362a60;
+  
+    /*Black Theme*/
+    --Black1: #0f0f12;
+    --Lilac: #c4a6c8;
+    --Blue1: #454362;
+    --Blue2: #8d8ad3;
+    --Green1: #55bd94;
+    --Gray1: #808080;
+    --Red1: #e85b54;
+    --Yellow1: #e5c51d;
+  }
+
+  
+.container_forms {
+  min-height: 93vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--White);
+  padding: 2rem 2rem 2rem 3rem;
+  border-radius: 5px;
+}
+
+form h1 {
+  font-size: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: var(--Black1);
+  font-weight: bold;
+}
+
+form span {
+  color: var(--Black1);
+  border-bottom: 4px solid var(--Purple2);
+  border-radius: 2px;
+}
+
+form .control-btn {
+  display: flex;
+  justify-content: end;
+  margin-right: 2rem;
+  margin-top: 1rem;
+}
+
+form a {
+  color: var(--Purple4);
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+form a:hover {
+  transition: all 0.15s;
+  color: var(--Purple2);
+}
+
+.container_forms .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.container_forms .form-group label {
+  margin-top: 1.5rem;
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--Black1);
+}
+
+.container_forms .form-group .form-control {
+  margin-top: 0.3rem;
+}
+
+.input-control {
+  display: flex;
+}
+
+#show-password-btn, #show-password-btn2 {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  width: 20px;
+}
+
+.container_forms .form-group input[type="text"],
+.container_forms .form-group input[type="email"]{
+  margin-right: 2rem;
+}
+
+.password-input {
+  margin-right: 0 !important;
+}
+
+.container_forms .form-group input[type="text"],
+.container_forms .form-group input[type="password"],
+.container_forms .form-group input[type="email"] {
+  color: var(--Black1);
+  background-color: var(--White);
+  outline: none;
+  border: none;
+  border-bottom: 2px solid black;
+  padding: 1rem;
+  width: 50rem;
+}
+
+.container_forms .form-group input[type="text"]:focus,
+.container_forms .form-group input[type="email"]:focus,
+.container_forms .form-group input[type="password"]:focus {
+  transition: all 0.4s;
+  border-bottom: 2px solid var(--Blue2);
+}
+
+.container_forms input[type="submit"] {
+  padding: 1.2rem 15rem;
+  font-size: 1.7rem;
+  background-color: var(--Purple2);
+  border: none;
+  border-radius: 20px;
+  color: var(--White);
+  margin-top: 3rem;
+}
+
+.container_forms input[type="submit"]:hover {
+  transition: all 0.3s;
+  background-color: var(--Purple1);
+  color: var(--White);
+}
+ 
+.eye-slash {
+  width: 20px;
+}
+
+@media (max-width: 768px) {
+  
+  form h1 {
+    font-size: 2.5rem;
+  }
+  
+  .container_forms .form-group label {
+    font-size: 1.6rem;
+  }
+  
+  .container_forms .form-group input[type="text"],
+  .container_forms .form-group input[type="password"],
+  .container_forms .form-group input[type="email"] {
+    width: 35rem;
+  }
+  
+  .container_forms input[type="submit"] {
+    padding: 1.2rem 11rem;
+    font-size: 1.4rem;
+  } 
+}
+
+@media (max-width: 566px) {
+
+  form {
+    padding: 1rem 1rem 1rem 2rem;
+  }
+
+  form h1 {
+    font-size: 2.3rem;
+  }
+  
+  .container_forms .form-group label {
+    font-size: 1.5rem;
+  }
+
+  form a {
+    font-size: 1.2rem;
+  }
+  
+  .container_forms .form-group input[type="text"],
+  .container_forms .form-group input[type="password"],
+  .container_forms .form-group input[type="email"] {
+    width: 22rem;
+  }
+  
+  .container_forms input[type="submit"] {
+    padding: 1.2rem 5rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  } 
+
+  #show-password-btn, #show-password-btn2, .eye-slash {
+   width: 15px;
+  }
+}

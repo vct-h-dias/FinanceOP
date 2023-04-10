@@ -1,0 +1,343 @@
+/*Paleta*/
+
+html {
+  /*Purple Theme*/
+  --Black2: #040307;
+  --White: #ecebf1;
+  --Purple1: #9668f5;
+  --Purple2: #6e4fef;
+  --Purple3: #5740a0;
+  --Purple4: #2a293e;
+  --Purple5: #362a60;
+
+  /*Black Theme*/
+  --Black1: #0f0f12;
+  --Lilac: #c4a6c8;
+  --Blue1: #454362;
+  --Blue2: #8d8ad3;
+  --Green1: #55bd94;
+  --Gray1: #808080;
+  --Red1: #e85b54;
+  --Yellow1: #e5c51d;
+}
+
+/*Corpo*/
+
+.container_home {
+  min-height: 93vh;
+  max-height: 93vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  -webkit-box-shadow: 0px 27px 31px 17px rgba(4, 3, 7, 0.96);
+  -moz-box-shadow: 0px 27px 31px 17px rgba(4, 3, 7, 0.96);
+  box-shadow: 0px 27px 31px 17px rgba(4, 3, 7, 0.96);
+}
+
+.container_home .home_img4 {
+  position: absolute;
+  top: 35px;
+  left: 390px;
+}
+
+.container_home .home_img1 {
+  position: absolute;
+  top: 0;
+  right: 90px;
+}
+
+.home_text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container_home .home_text h1 {
+  font-size: 5rem;
+}
+
+.container_home .home_text h6 {
+  font-size: 2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+
+.container_home .home_button {
+  margin-top: 3rem;
+}
+
+.container_home .home_button .home_button_link {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--White);
+  padding: 1.5rem 2.5rem;
+  border-radius: 0.9rem;
+  background-color: var(--Purple1);
+}
+
+.container_home .home_button .home_button_link:hover {
+  transition: all 0.3s;
+  background-color: var(--Green1);
+  color: var(--Black2);
+}
+
+.container_home .home_img2 {
+  position: absolute;
+  bottom: 0;
+  left: 90px;
+}
+
+.container_home .home_img3 {
+  position: absolute;
+  bottom: 90px;
+  right: 450px;
+}
+
+/*Info*/
+
+.container_info {
+  background-color: #3f3a4c33;
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container_info h1 {
+  font-size: 3rem;
+}
+
+.container_info p {
+  font-size: 2rem;
+}
+
+.container_info .frase_um {
+  margin-top: 20rem;
+  padding-left: 10rem;
+  padding-right: 10rem;
+}
+
+.container_info .frase_dois {
+  margin-top: 15rem;
+  padding-left: 55rem;
+  padding-right: 10rem;
+}
+
+.container_info .frase_tres {
+  margin-top: 15rem;
+  margin-bottom: 20rem;
+  padding-left: 10rem;
+  padding-right: 10rem;
+}
+
+/*Responsividade MQ*/
+
+@media (max-width: 1588px) {
+  .container_home .home_img1 {
+    top: 0;
+    right: 0;
+  }
+  .container_home .home_img2 {
+    bottom: 0;
+    left: 0;
+  }
+}
+
+@media (max-width: 1400px) {
+  .container_home .home_img1 {
+    display: none;
+  }
+
+  .container_home .home_img2 {
+    display: none;
+  }
+
+  .container_home .home_img3 {
+    display: none;
+  }
+
+  .container_home .home_img4 {
+    display: none;
+  }
+
+  .container_info h1 {
+    font-size: 2.5rem;
+  }
+
+  .container_info p {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 1217px) {
+  .container_info h1 {
+    font-size: 2rem;
+  }
+
+  .container_info p {
+    font-size: 1.5rem;
+  }
+
+  .container_info .frase_um {
+    margin-top: 20rem;
+    padding-left: 10rem;
+  }
+  
+  .container_info .frase_dois {
+    margin-top: 15rem;
+    padding-left: 40rem;
+    padding-right: 10rem;
+  }
+  
+  .container_info .frase_tres {
+    margin-top: 15rem;
+    margin-bottom: 20rem;
+    padding-left: 10rem;
+  }
+}
+
+@media (max-width: 1060px) {
+  .container_info .frase_um {
+    margin-top: 20rem;
+    padding-left: 10rem;
+  }
+  
+  .container_info .frase_dois {
+    margin-top: 15rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+  
+  .container_info .frase_tres {
+    margin-top: 15rem;
+    margin-bottom: 20rem;
+    padding-left: 10rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container_home .home_text h1 {
+    font-size: 3rem;
+  }
+
+  .container_home .home_text h6 {
+    font-size: 1.5rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+  }
+
+  .container_home .home_button .home_button_link {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--White);
+    padding: 1.2rem 2rem;
+    border-radius: 0.9rem;
+    background-color: var(--Purple1);
+  }
+
+  .container_info h1 {
+    font-size: 1.5rem;
+  }
+
+  .container_info p {
+    font-size: 1.3rem;
+  }
+
+  .container_info .frase_um {
+    margin-top: 15rem;
+    padding-left: 10rem;
+  }
+  
+  .container_info .frase_dois {
+    margin-top: 10rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+  
+  .container_info .frase_tres {
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    padding-left: 10rem;
+  }
+
+  footer .div_createdby {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 566px) {
+  .container_home .home_text h6 {
+    font-size: 1.1rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+  }
+
+  .container_info h1 {
+    font-size: 1.3rem;
+  }
+
+  .container_info p {
+    font-size: 1rem;
+  }
+
+  footer .div_createdby {
+    font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 440px) {
+  
+  .container_home .home_text h1 {
+    font-size: 2rem;
+  }
+
+  .container_home .home_text h6 {
+    font-size: 0.9rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+  }
+
+  .container_home .home_button .home_button_link {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--White);
+    padding: 1rem 1.8rem;
+    border-radius: 0.9rem;
+    background-color: var(--Purple1);
+  }
+
+  .container_info h1 {
+    font-size: 1.3rem;
+  }
+
+  .container_info p {
+    font-size: 1rem;
+  }
+
+  .container_info .frase_um {
+    margin-top: 10rem;
+    padding-right: 5rem;
+    padding-left: 5rem;
+  }
+  
+  .container_info .frase_dois {
+    margin-top: 7rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+  
+  .container_info .frase_tres {
+    margin-top: 7rem;
+    margin-bottom: 7rem;
+    padding-right: 5rem;
+    padding-left: 5rem;
+  }
+
+  footer .div_createdby {
+    font-size: 0.5rem;
+  }
+}
