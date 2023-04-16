@@ -65,10 +65,10 @@ form a {
   color: var(--Purple4);
   font-size: 1.4rem;
   font-weight: 500;
+  transition: all 0.15s;
 }
 
 form a:hover {
-  transition: all 0.15s;
   color: var(--Purple2);
 }
 
@@ -119,12 +119,12 @@ form a:hover {
   border-bottom: 2px solid black;
   padding: 1rem;
   width: 50rem;
+  transition: all 0.4s;
 }
 
 .container_forms .form-group input[type="text"]:focus,
 .container_forms .form-group input[type="email"]:focus,
 .container_forms .form-group input[type="password"]:focus {
-  transition: all 0.4s;
   border-bottom: 2px solid var(--Blue2);
 }
 
@@ -136,10 +136,10 @@ form a:hover {
   border-radius: 20px;
   color: var(--White);
   margin-top: 3rem;
+  transition: all 0.3s;
 }
 
 .container_forms input[type="submit"]:hover {
-  transition: all 0.3s;
   background-color: var(--Purple1);
   color: var(--White);
 }

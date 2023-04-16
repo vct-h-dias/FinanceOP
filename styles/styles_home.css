@@ -76,10 +76,10 @@ html {
   padding: 1.5rem 2.5rem;
   border-radius: 0.9rem;
   background-color: var(--Purple1);
+  transition: all 0.3s;
 }
 
 .container_home .home_button .home_button_link:hover {
-  transition: all 0.3s;
   background-color: var(--Green1);
   color: var(--Black2);
 }
