@@ -47,6 +47,7 @@ input[type="submit"] {
   -khtml-user-drag: none; /* Konqueror HTML */
   -moz-user-drag: none; /* Old versions of Firefox */
   -o-user-drag: none; /* Old versions of Opera */
+  user-drag: none;
 }
 
 body::-webkit-scrollbar {
