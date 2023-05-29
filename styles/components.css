@@ -107,15 +107,16 @@ header .signup {
   background-color: var(--Purple1);
   border-radius: 5px;
   padding: 0.7rem 0.9rem;
+  transition: all 0.3s;
 }
 
 header .signup a {
   border-radius: 5px;
+  transition: all 0.3s;
 }
 
 header .signup:hover,
 header .signup a:hover {
-  transition: all 0.3s;
   background-color: var(--Green1);
   color: var(--Black2);
 }
@@ -221,7 +222,7 @@ footer .div_createdby a {
     display: block;
     background-color: transparent !important;
   }
-  
+
   .signup:hover {
     color: var(--White) !important;
   }
