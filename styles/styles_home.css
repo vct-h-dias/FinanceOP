@@ -221,6 +221,14 @@ html {
 }
 
 @media (max-width: 768px) {
+  .home_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+  }
+
   .container_home .home_text h1 {
     font-size: 3rem;
   }
