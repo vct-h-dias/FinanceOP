@@ -139,13 +139,25 @@ form a:hover {
   transition: all 0.3s;
 }
 
-.container_forms input[type="submit"]:hover {
+.container_forms input[type="submit"]:not([disabled]):hover {
   background-color: var(--Purple1);
   color: var(--White);
 }
 
 .eye-slash {
   width: 20px;
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error p{
+  font-size: 1.5rem;
+  color: red;
+  display: none;
 }
 
 @media (max-width: 768px) {

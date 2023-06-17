@@ -43,8 +43,18 @@
         </header>
 
         <div class="container_forms">
-            <form>
+            <form
+                action="http://localhost:5000/gravardados.php"
+                method="get"
+                class="formulario"
+            >
                 <h1><span>Si</span>gn UP</h1>
+                <div class="error">
+                    <p id="error-email">O formato de email está incorreto</p>
+                    <p id="error-username">O Username precisa ter no mínimo 5 caracteres</p>
+                    <p id="error-password">A senha deve ter no mínimo 8 caracteres</p>
+                    <p id="error-password-confirm">As senhas não coincidem</p>
+                </div>
                 <div class="form-group">
                     <label for="email">Email</label>
                     <div class="input-control">
@@ -79,7 +89,7 @@
                     </div>
                 </div>  
 
-                <input type="submit" name="submit" id="submit" value="SIGN UP">
+                <input type="submit" name="submit" id="submit" value="SIGN UP" disabled>
             </form>
         </div>
 
