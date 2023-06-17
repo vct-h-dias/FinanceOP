@@ -26,11 +26,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $query = "SELECT * FROM USERS WHERE email='$email'";
     $res = mysqli_query($conn, $query);
 
-    if($res->num_rows){
-      http_response_code(409);
+    if(!($res->num_rows)){
+      http_response_code(404);
       echo json_encode(array(
         'sucess' => false,
-        'error' => "Duplicate entity with email '$email'"
+        'error' => "Not found entity with email '$email'"
       ));
       exit();
     }
@@ -41,18 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo json_encode(array(
       'sucess' => false,
       'error' => "Missing 'email' field"
-    ));
-    exit();
-
-  }
-
-  if(isset($data['username'])) $username = $data['username'];
-  else{
-    
-    http_response_code(400);
-    echo json_encode(array(
-      'sucess' => false,
-      'error' => "Missing 'username' field"
     ));
     exit();
 
@@ -70,17 +58,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   }
 
-  $query = "INSERT INTO USERS (email, username, senha) VALUES ('$email', '$username', '$password')";
+  $query = "SELECT * FROM USERS WHERE email='$email' AND senha='$password'";
 
   $res = mysqli_query($conn, $query);
 
   if ($res) {
-    http_response_code(200);
-    echo json_encode(array(
-      'sucess' => true,
-      'error' => null
-    ));
-    exit();
+    // echo $res->num_rows; 
+    if($res->num_rows){
+  
+      http_response_code(200);
+      echo json_encode(array(
+        'sucess' => true,
+        'login' => true,
+        'data' => mysqli_fetch_assoc($res),
+        'error' => null
+      ));
+      exit();
+
+    }else {
+
+      http_response_code(401);
+      echo json_encode(array(
+        'sucess' => false,
+        'login' => false,
+        'data' => null,
+        'error' => "Unauthorized request who access email '$email'"
+      ));
+    }
+
+    
   }
 }
 
