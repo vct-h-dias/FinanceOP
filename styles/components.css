@@ -42,6 +42,9 @@ header {
   align-items: center;
   justify-content: space-between;
   user-select: none;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
 }
 
 header .a_logo {
@@ -55,10 +58,12 @@ header .div_logo {
 }
 
 header .logo {
-  width: 5rem;
-  height: 5rem;
+  width: 7rem;
+  height: 7rem;
+  background-position: center;
   background-size: contain;
-  background-image: url("../assets/logo_black.png");
+  background-repeat: no-repeat;
+  background-image: url("../assets/logo.png");
 }
 
 header .div_logo h1 {

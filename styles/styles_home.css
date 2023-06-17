@@ -24,8 +24,8 @@ html {
 /*Corpo*/
 
 .container_home {
-  min-height: 93vh;
-  max-height: 93vh;
+  min-height: 100vh;
+  max-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,13 +38,13 @@ html {
 
 .container_home .home_img4 {
   position: absolute;
-  top: 35px;
+  top: 90px;
   left: 390px;
 }
 
 .container_home .home_img1 {
   position: absolute;
-  top: 0;
+  top: 40px;
   right: 90px;
 }
 
@@ -53,6 +53,7 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 }
 
 .container_home .home_text h1 {
