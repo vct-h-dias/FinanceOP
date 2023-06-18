@@ -31,7 +31,7 @@
   <body>
     <div class="father">
       <header>
-        <a href="../" class="a_logo">
+        <a href="/" class="a_logo">
           <div class="div_logo">
             <div class="logo"></div>
             <div class="logo_text">
@@ -56,34 +56,47 @@
 
         <ul>
           <li>
-            <a class="hover-underline-animation control-checked" href="../"
-              >Home</a
-            >
+            <a
+              id="home-button"
+              class="hover-underline-animation control-checked"
+              href="/"
+              >Home</a>
           </li>
           <li>
             <a
+              id="login-button"
               class="hover-underline-animation control-checked"
-              href="../pages/signin.html"
+              href="/pages/signin.html"
               >Sign In</a
             >
           </li>
           <li>
-            <a class="signup control-checked" href="../pages/signup.html"
+            <a
+              id="signup-button"
+              class="signup control-checked"
+              href="/pages/signup.html"
               >Sign Up</a
             >
           </li>
+          <li id="logged-in-div" style="display: none;"></li>
         </ul>
       </header>
 
       <div class="container_forms">
         <form
-          action="http://localhost:5000/login.php"
-          method="get"
+          method="POST"
           class="formulario"
+          id="formulario"
         >
-          <h1><span>Lo<div></div></span>gin</h1>
+          <h1>
+            <span
+              >Lo
+              <div></div></span
+            >gin
+          </h1>
+          <h3 id="error-login" style="display: none; color: red; font-size: large;">Usuário ou senha incorreto/s</h3>
           <div class="form-group">
-            <label for="email">Username</label>
+            <label for="email">Email</label>
             <div class="input-control">
               <img
                 src="../assets/user-solid.svg"
@@ -126,7 +139,7 @@
               <a href="../">Esqueci Minha Senha?</a>
             </div>
           </div>
-          <input type="submit" name="submit" id="submit" value="LOGIN" />
+          <input type="submit" name="submit" id="submit" value="LOGIN" form-type="login"/>
 
           <div class="no_account">
             <a href="../pages/signup.html" class="no-account-btn"
@@ -153,6 +166,7 @@
       </footer>
     </div>
 
+    <script src="../scripts/general.js"></script>
     <script src="../scripts/scripts_signin.js"></script>
   </body>
 </html>

@@ -1,4 +1,7 @@
 <?php
+header('Access-Control-Allow-Origin: http://127.0.0.1:5500');
+header('Access-Control-Allow-Methods: POST');
+header('Access-Control-Allow-Headers: Content-Type');
 header('Content-type: application/json');
 
 //building JSON
@@ -8,7 +11,7 @@ $data = json_decode($json, true);
 //conecting to DB 
 $hostname = "localhost";
 $user = "root";
-$pass = "jojo1234"; //local pass
+$pass = ""; //local pass
 $database = "FINOP";
 $conn = mysqli_connect($hostname, $user, $pass, $database);
 if (!$conn) {
@@ -85,9 +88,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'error' => "Unauthorized request who access email '$email'"
       ));
     }
-
-    
   }
 }
-
 ?>

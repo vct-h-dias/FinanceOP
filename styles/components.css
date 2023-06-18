@@ -143,6 +143,26 @@ header .signup a:hover {
   display: none;
 }
 
+#logged-in-div {
+  gap: .5rem; 
+}
+
+#logged-in-div div {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+#logged-in-div p{
+  font-size: 18px;
+}
+
+#logged-in-div h6{
+  font-size: 12px;
+  font-weight: 300;
+}
+
 /*Footer*/
 
 footer {

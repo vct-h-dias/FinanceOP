@@ -57,21 +57,29 @@
 
         <ul>
           <li>
-            <a class="hover-underline-animation control-checked" href="/"
-              >Home</a
-            >
+            <a
+              id="home-button"
+              class="hover-underline-animation control-checked"
+              href="/"
+              >Home</a>
           </li>
           <li>
             <a
+              id="login-button"
               class="hover-underline-animation control-checked"
               href="/pages/signin.html"
               >Sign In</a
             >
           </li>
           <li>
-            <a class="signup control-checked" href="/pages/signup.html"
+            <a
+              id="signup-button"
+              class="signup control-checked"
+              href="/pages/signup.html"
               >Sign Up</a
             >
+          </li>
+          <li id="logged-in-div" style="display: none;">
           </li>
         </ul>
       </header>
@@ -118,7 +126,12 @@
       </div>
 
       <div class="container_info">
-        <div class="frase_um" data-aos="fade-up" data-aos-delay="50" data-aos-duration="350">
+        <div
+          class="frase_um"
+          data-aos="fade-up"
+          data-aos-delay="50"
+          data-aos-duration="350"
+        >
           <h1>
             •Registre seus gastos diários aqui para ter um melhor controle de
             seu dinheiro
@@ -129,7 +142,12 @@
             Além de poder ter um histórico de compras e transações
           </p>
         </div>
-        <div class="frase_dois" data-aos="fade-up" data-aos-delay="50" data-aos-duration="350">
+        <div
+          class="frase_dois"
+          data-aos="fade-up"
+          data-aos-delay="50"
+          data-aos-duration="350"
+        >
           <h1>
             •Tenha acesso a diversos gráficos e tabelas para facilitar a análise
             de suas finanças
@@ -140,7 +158,12 @@
             e entender o porque o dinheiro não sobra no fim do mês
           </p>
         </div>
-        <div class="frase_tres" data-aos="fade-up" data-aos-delay="50" data-aos-duration="350">
+        <div
+          class="frase_tres"
+          data-aos="fade-up"
+          data-aos-delay="50"
+          data-aos-duration="350"
+        >
           <h1>
             •Tenha o controle de toda a sua rede em um só lugar da forma mais
             otimizada possível
@@ -174,6 +197,7 @@
       </footer>
     </div>
 
+    <script src="scripts/general.js"></script>
     <script src="scripts/scripts_home.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>

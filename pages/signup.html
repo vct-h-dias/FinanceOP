@@ -31,7 +31,7 @@
   <body>
     <div class="father">
       <header>
-        <a href="../" class="a_logo">
+        <a href="/" class="a_logo">
           <div class="div_logo">
             <div class="logo"></div>
             <div class="logo_text">
@@ -56,22 +56,29 @@
 
         <ul>
           <li>
-            <a class="hover-underline-animation control-checked" href="../"
-              >Home</a
-            >
+            <a
+              id="home-button"
+              class="hover-underline-animation control-checked"
+              href="/"
+              >Home</a>
           </li>
           <li>
             <a
+              id="login-button"
               class="hover-underline-animation control-checked"
-              href="../pages/signin.html"
+              href="/pages/signin.html"
               >Sign In</a
             >
           </li>
           <li>
-            <a class="signup control-checked" href="../pages/signup.html"
+            <a
+              id="signup-button"
+              class="signup control-checked"
+              href="/pages/signup.html"
               >Sign Up</a
             >
           </li>
+          <li id="logged-in-div" style="display: none;"></li>
         </ul>
       </header>
 
@@ -89,6 +96,7 @@
             </p>
             <p id="error-password">A senha deve ter no mínimo 8 caracteres</p>
             <p id="error-password-confirm">As senhas não coincidem</p>
+            <p id="error-login"></p>
           </div>
           <div class="form-group">
             <label for="email">Email</label>
@@ -178,9 +186,10 @@
 
           <input
             type="submit"
-            name="signup"
-            id="signup"
+            name="submit"
+            id="submit"
             value="SIGN UP"
+            form-type="signup"
             disabled
           />
         </form>
