@@ -2,7 +2,7 @@
 var isLoggedIn = false;
 
 //recebe os dados dos formulários
-document.getElementById("submit").addEventListener("click", function (e) {
+document.getElementById("submit").addEventListener("click", async function (e) {
   e.preventDefault();
 
   if (this.getAttribute("form-type") === "login") {
@@ -14,8 +14,7 @@ document.getElementById("submit").addEventListener("click", function (e) {
       password: password,
     };
 
-    document.getElementById("formulario").reset();
-    logar(data);
+    await logar(data);
   } else if (this.getAttribute("form-type") === "signup") {
     const email = document.getElementById("email").value;
     const username = document.getElementById("username").value;
@@ -27,9 +26,12 @@ document.getElementById("submit").addEventListener("click", function (e) {
       password: password,
     };
 
-    document.getElementById("formulario").reset();
-    cadastrar(data);
+    await cadastrar(data);
+    const btn = document.getElementById("submit");
+    btn.setAttribute("disabled", "disabled");
   }
+  
+  document.getElementById("formulario").reset();
 });
 
 //recebe os dados e cadastra o usuário
@@ -52,7 +54,12 @@ async function cadastrar(data) {
       password: data.password,
     };
 
-    logar(login);
+    if (response.status === 409) {
+      document.getElementById("error-login").style.display = "block";
+    } else if (response.status === 200) {
+      logar(login);
+    } else {
+    }
   } catch (error) {
     console.error("Erro:", error);
   }
@@ -73,10 +80,9 @@ async function logar(data) {
     const response = await fetch(url, requestOptions);
     const responseData = await response.json();
 
-    
     if (responseData.sucess !== false) {
       document.getElementById("error-login").style.display = "none";
-      
+
       console.log(responseData);
       isLoggedIn = true;
       isLogged(responseData);
