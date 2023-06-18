@@ -21,16 +21,15 @@ html {
   --Yellow1: #e5c51d;
 }
 
-
 .container_forms {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
 form {
+  margin-top: 20em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -179,6 +178,7 @@ form a:hover {
 @media (max-width: 566px) {
   form {
     padding: 1rem 1rem 1rem 2rem;
+    margin-top: 10em;
   }
 
   form h1 {

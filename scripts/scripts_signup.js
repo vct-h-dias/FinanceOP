@@ -65,11 +65,10 @@ document.getElementById('password_confirm').addEventListener('input', function(e
 })
 
 function checkTrue() {
-  const btn = document.getElementById('submit');
+  const btn = document.getElementById('signup');
   if(checkForm.email === true && checkForm.password === true && checkForm.username === true){
     btn.removeAttribute("disabled");
   }else{
-    console.log("aq")
     btn.setAttribute("disabled", "disabled");
   }
   

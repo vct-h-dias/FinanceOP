@@ -24,6 +24,7 @@ html {
 /*Corpo*/
 
 .container_home {
+  overflow-x: hidden;
   min-height: 100vh;
   max-height: 100vh;
   display: flex;
@@ -150,19 +151,26 @@ html {
 
 @media (max-width: 1400px) {
   .container_home .home_img1 {
-    display: none;
+    top: 5rem;
+    width: 350px;
+    height: 350px;
   }
 
   .container_home .home_img2 {
-    display: none;
+    width: 350px;
+    height: 350px;
   }
 
   .container_home .home_img3 {
-    display: none;
+    right: 225px;
+    width: 225px;
+    height: 225px;
   }
-
+  
   .container_home .home_img4 {
-    display: none;
+    left: 225px;
+    width: 180px;
+    height: 180px;
   }
 
   .container_info h1 {
@@ -347,5 +355,50 @@ html {
 
   footer .div_createdby {
     font-size: 0.5rem;
+  }
+}
+
+
+@media (max-width: 913px) {
+  .container_home .home_img1 {
+    display: none;
+  }
+  
+  .container_home .home_img2 {
+    display: none;
+  }
+  
+  .container_home .home_img3 {
+    display: none;
+  }
+  
+  .container_home .home_img4 {
+    display: none;
+  }
+}
+
+@media (width: 1024px) and (height: 600px) {
+  .container_home .home_img1 {
+    top: 4rem;
+    width: 230px;
+    height: 230px;
+  }
+
+  .container_home .home_img2 {
+    left: 65px;
+    width: 250px;
+    height: 250px;
+  }
+
+  .container_home .home_img3 {
+    right: 125px;
+    width: 125px;
+    height: 125px;
+  }
+  
+  .container_home .home_img4 {
+    left: 125px;
+    width: 120px;
+    height: 120px;
   }
 }

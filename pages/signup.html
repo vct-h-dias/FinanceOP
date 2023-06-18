@@ -77,9 +77,9 @@
 
       <div class="container_forms">
         <form
-          action="http://localhost:5000/user.php"
-          method="get"
+          method="POST"
           class="formulario"
+          id="formulario"
         >
           <h1><span>Si<div></div></span>gn UP</h1>
           <div class="error">
@@ -178,8 +178,8 @@
 
           <input
             type="submit"
-            name="submit"
-            id="submit"
+            name="signup"
+            id="signup"
             value="SIGN UP"
             disabled
           />
@@ -203,6 +203,7 @@
       </footer>
     </div>
 
+    <script src="../scripts/general.js"></script>
     <script src="../scripts/scripts_signup.js"></script>
   </body>
 </html>
