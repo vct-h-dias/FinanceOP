@@ -22,14 +22,14 @@ html {
 }
 
 .container_forms {
-  min-height: 93vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
 form {
+  margin-top: 22em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,6 +42,7 @@ form {
 form h1 {
   font-size: 3rem;
   margin-top: 2rem;
+  display: flex;
   margin-bottom: 2rem;
   color: var(--Black1);
   font-weight: bold;
@@ -49,7 +50,13 @@ form h1 {
 
 form span {
   color: var(--Black1);
-  border-bottom: 4px solid var(--Purple2);
+}
+
+form span div {
+  margin-top: -3px;
+  width: 100%;
+  height: 4px;
+  background: var(--Purple2);
   border-radius: 2px;
 }
 
@@ -171,6 +178,7 @@ form a:hover {
 @media (max-width: 566px) {
   form {
     padding: 1rem 1rem 1rem 2rem;
+    margin-top: 10em;
   }
 
   form h1 {

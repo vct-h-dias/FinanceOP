@@ -1,84 +1,172 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="copyright" content="Copyright © 2023, Vicente dos Santos and Victor Hugo Montanari">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../assets/logo_black.png" type="image/x-icon">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="copyright"
+      content="Copyright © 2023, Vicente dos Santos and Victor Hugo Montanari"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="../assets/favicon.png"
+      type="image/x-icon"
+    />
+
     <!--CSS's-->
-    <link rel="stylesheet" href="../styles/basics.css">
-    <link rel="stylesheet" href="../styles/components.css">
-    <link rel="stylesheet" href="../styles/styles_signin.css">
+    <link rel="stylesheet" href="../styles/basics.css" />
+    <link rel="stylesheet" href="../styles/components.css" />
+    <link rel="stylesheet" href="../styles/styles_signin.css" />
 
     <!--fontes-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&family=Poppins:wght@100;200;300;400;500&family=Source+Sans+Pro:wght@200;300;400;600&display=swap" rel="stylesheet">
-   
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&family=Poppins:wght@100;200;300;400;500&family=Source+Sans+Pro:wght@200;300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Sign In - Finop</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="father">
-        <header>
-            <a href="../" class="a_logo">
-                <div class="div_logo">
-                    <div class="logo"></div>
-                    <div class="logo_text">
-                        <h1>FINOP</h1>
-                    </div>
-                </div>
-            </a>
-
-            <input type="checkbox" id="check">
-            <label for="check" class="checkbtn">
-                <svg class="bars-solid" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
-            </label>
-            
-            <ul>
-                <li><a class="hover-underline-animation control-checked" href="../">Home</a></li>
-                <li><a class="hover-underline-animation control-checked" href="../pages/signin.html">Sign In</a></li>
-                <li><a class="signup control-checked" href="../pages/signup.html">Sign Up</a></li>
-            </ul>
-        </header>
-
-        <div class="container_forms">
-            <form>
-                <h1><span>Lo</span>gin</h1>
-                <div class="form-group">
-                    <label for="email">Username</label>
-                    <div class="input-control">
-                        <img src="../assets/user-solid.svg" class="no_select_image" width="10" alt="user icon">
-                        <input type="text" class="form-control" name="email" id="email" placeholder="Digite seu E-mail ou Usuário" required> 
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <div class="input-control">
-                        <img src="../assets/lock-solid.svg" class="no_select_image" width="10" alt="password icon">
-                        <input type="password" class="form-control password-input" name="password" id="password" placeholder="Digite sua Senha" required>
-                        <button type="button" id="show-password-btn"><img src="../assets/eye-solid.svg" alt="eye icon"></button>
-                    </div>
-                    <div class="control-btn">
-                        <a href="../">Esqueci Minha Senha?</a>
-                    </div>
-                </div>  
-                <input type="submit" name="submit" id="submit" value="LOGIN">
-
-                <div class="no_account">
-                    <a href="../pages/signup.html" class="no-account-btn">Não tem uma conta?</a>
-                </div>
-            </form>
-        </div>
-
-        <footer>
-            <div class="div_createdby">
-                <h1>Created By: <a href="https://github.com/SantosVicente/">Vicente dos Santos Silva</a> and <a href="https://github.com/vct-h-dias/">Victor Hugo Montanari Dias</a></h1>
-                <h1>Copyright © 2023</h1>
+      <header>
+        <a href="/" class="a_logo">
+          <div class="div_logo">
+            <div class="logo"></div>
+            <div class="logo_text">
+              <h1>FINOP</h1>
             </div>
-        </footer>
+          </div>
+        </a>
+
+        <input type="checkbox" id="check" />
+        <label for="check" class="checkbtn">
+          <svg
+            class="bars-solid"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+          >
+            <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+              d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+            />
+          </svg>
+        </label>
+
+        <ul>
+          <li>
+            <a
+              id="home-button"
+              class="hover-underline-animation control-checked"
+              href="/"
+              >Home</a>
+          </li>
+          <li>
+            <a
+              id="login-button"
+              class="hover-underline-animation control-checked"
+              href="/pages/signin.html"
+              >Sign In</a
+            >
+          </li>
+          <li>
+            <a
+              id="signup-button"
+              class="signup control-checked"
+              href="/pages/signup.html"
+              >Sign Up</a
+            >
+          </li>
+          <li id="logged-in-div" style="display: none;"></li>
+        </ul>
+      </header>
+
+      <div class="container_forms">
+        <form
+          method="POST"
+          class="formulario"
+          id="formulario"
+        >
+          <h1>
+            <span
+              >Lo
+              <div></div></span
+            >gin
+          </h1>
+          <h3 id="error-login" style="display: none; color: red; font-size: large;">Usuário ou senha incorreto/s</h3>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <div class="input-control">
+              <img
+                src="../assets/user-solid.svg"
+                class="no_select_image"
+                width="10"
+                alt="user icon"
+              />
+              <input
+                type="text"
+                class="form-control"
+                name="email"
+                id="email"
+                placeholder="Digite seu E-mail ou Usuário"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <div class="input-control">
+              <img
+                src="../assets/lock-solid.svg"
+                class="no_select_image"
+                width="10"
+                alt="password icon"
+              />
+              <input
+                type="password"
+                class="form-control password-input"
+                name="password"
+                id="password"
+                placeholder="Digite sua Senha"
+                required
+              />
+              <button type="button" id="show-password-btn">
+                <img src="../assets/eye-solid.svg" alt="eye icon" />
+              </button>
+            </div>
+            <div class="control-btn">
+              <a href="../">Esqueci Minha Senha?</a>
+            </div>
+          </div>
+          <input type="submit" name="submit" id="submit" value="LOGIN" form-type="login"/>
+
+          <div class="no_account">
+            <a href="../pages/signup.html" class="no-account-btn"
+              >Não tem uma conta?</a
+            >
+          </div>
+        </form>
+      </div>
+
+      <footer>
+        <div class="div_createdby">
+          <h1>
+            Created By:
+            <a href="https://github.com/SantosVicente/"
+              >Vicente dos Santos Silva</a
+            >
+            and
+            <a href="https://github.com/vct-h-dias/"
+              >Victor Hugo Montanari Dias</a
+            >
+          </h1>
+          <h1>Copyright © 2023</h1>
+        </div>
+      </footer>
     </div>
 
+    <script src="../scripts/general.js"></script>
     <script src="../scripts/scripts_signin.js"></script>
-</body>
+  </body>
 </html>

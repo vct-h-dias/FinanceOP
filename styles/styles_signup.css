@@ -22,14 +22,15 @@ html {
 }
 
 .container_forms {
-  min-height: 93vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-form {
+.formulario {
+  margin-top: 8em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,7 +40,8 @@ form {
   border-radius: 5px;
 }
 
-form h1 {
+.formulario h1 {
+  display: flex;
   font-size: 3rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -47,27 +49,33 @@ form h1 {
   font-weight: bold;
 }
 
-form span {
+.formulario span {
   color: var(--Black1);
-  border-bottom: 4px solid var(--Purple2);
+}
+
+.formulario span div {
+  margin-top: -3px;
+  width: 100%;
+  height: 4px;
+  background: var(--Purple2);
   border-radius: 2px;
 }
 
-form .control-btn {
+.formulario .control-btn {
   display: flex;
   justify-content: end;
   margin-right: 2rem;
   margin-top: 1rem;
 }
 
-form a {
+.formulario a {
   color: var(--Purple4);
   font-size: 1.4rem;
   font-weight: 500;
   transition: all 0.15s;
 }
 
-form a:hover {
+.formulario a:hover {
   color: var(--Purple2);
 }
 
@@ -139,7 +147,7 @@ form a:hover {
   transition: all 0.3s;
 }
 
-.container_forms input[type="submit"]:hover {
+.container_forms input[type="submit"]:not([disabled]):hover {
   background-color: var(--Purple1);
   color: var(--White);
 }
@@ -148,8 +156,25 @@ form a:hover {
   width: 20px;
 }
 
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error p{
+  font-size: 1.5rem;
+  color: red;
+  display: none;
+}
+
 @media (max-width: 768px) {
-  form h1 {
+  .formulario {
+    padding: 1rem 1rem 1rem 2rem;
+    margin-top: -8em;
+  }
+
+  .formulario h1 {
     font-size: 2.5rem;
   }
 
@@ -170,11 +195,11 @@ form a:hover {
 }
 
 @media (max-width: 566px) {
-  form {
+  .formulario {
     padding: 1rem 1rem 1rem 2rem;
   }
 
-  form h1 {
+  .formulario h1 {
     font-size: 2.3rem;
   }
 
@@ -182,8 +207,17 @@ form a:hover {
     font-size: 1.5rem;
   }
 
-  form a {
+  .formulario a {
     font-size: 1.2rem;
+  }
+
+  .error {
+    margin-top: -1rem;
+    margin-bottom: -1rem;
+  }
+
+  .error p{
+    font-size: 10px;
   }
 
   .container_forms .form-group input[type="text"],

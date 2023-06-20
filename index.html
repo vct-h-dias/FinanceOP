@@ -1,96 +1,207 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="copyright" content="Copyright © 2023, Vicente dos Santos and Victor Hugo Montanari">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../assets/logo_black.png" type="image/x-icon">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="copyright"
+      content="Copyright © 2023, Vicente dos Santos and Victor Hugo Montanari"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="../assets/favicon.png"
+      type="image/x-icon"
+    />
+
     <!--CSS's-->
-    <link rel="stylesheet" href="../styles/basics.css">
-    <link rel="stylesheet" href="../styles/styles_home.css">
-    <link rel="stylesheet" href="../styles/components.css">
+    <link rel="stylesheet" href="../styles/basics.css" />
+    <link rel="stylesheet" href="../styles/styles_home.css" />
+    <link rel="stylesheet" href="../styles/components.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <!--fontes-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&family=Poppins:wght@100;200;300;400;500&family=Source+Sans+Pro:wght@200;300;400;600&display=swap" rel="stylesheet">
-   
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&family=Poppins:wght@100;200;300;400;500&family=Source+Sans+Pro:wght@200;300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Finop</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="father">
-        <header>
-            <a href="/" class="a_logo">
-                <div class="div_logo">
-                    <div class="logo"></div>
-                    <div class="logo_text">
-                        <h1>FINOP</h1>
-                    </div>
-                </div>
-            </a>
-
-            <input type="checkbox" id="check">
-            <label for="check" class="checkbtn">
-                <svg class="bars-solid" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
-            </label>
-            
-            <ul>
-                <li><a class="hover-underline-animation control-checked" href="/">Home</a></li>
-                <li><a class="hover-underline-animation control-checked" href="/pages/signin.html">Sign In</a></li>
-                <li><a class="signup control-checked" href="/pages/signup.html">Sign Up</a></li>
-            </ul>
-        </header>
-
-        <div class="container_home">
-            <img class="home_img4 no_select_image" src="assets/bitcoin_vector.png"  width="200" height="200" alt="vetor de bitcoin">
-            <img class="home_img1 no_select_image" src="assets/vector_card1.png" width="500" height="500" alt="vetor de cartão de crédito 1">
-            <div class="home_text">
-                <h1>Bem vindo ao Finance OP</h1>
-                <h6>Manipular suas finanças nunca foi tão fácil!</h6>
-                <h6>Com FinOP vc consegue monitorar todos seus gastos e planejamentos!</h6>
+      <header>
+        <a href="/" class="a_logo">
+          <div class="div_logo">
+            <div class="logo"></div>
+            <div class="logo_text">
+              <h1>FINOP</h1>
             </div>
-            <div class="home_button">
-                <a class="home_button_link" href="pages/signup.html">Saiba Mais</a>
-            </div>
-            <img class="home_img2 no_select_image" src="assets/vector_card2.png" width="500" height="500" alt="vetor de cartão de crédito 2">
-            <img class="home_img3 no_select_image" src="assets/graphic_vector.png" width="250" height="250" alt="vetor de dinheiro">
+          </div>
+        </a>
+
+        <input type="checkbox" id="check" />
+        <label for="check" class="checkbtn">
+          <svg
+            class="bars-solid"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+          >
+            <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+              d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+            />
+          </svg>
+        </label>
+
+        <ul>
+          <li>
+            <a
+              id="home-button"
+              class="hover-underline-animation control-checked"
+              href="/"
+              >Home</a>
+          </li>
+          <li>
+            <a
+              id="login-button"
+              class="hover-underline-animation control-checked"
+              href="/pages/signin.html"
+              >Sign In</a
+            >
+          </li>
+          <li>
+            <a
+              id="signup-button"
+              class="signup control-checked"
+              href="/pages/signup.html"
+              >Sign Up</a
+            >
+          </li>
+          <li id="logged-in-div" style="display: none;">
+          </li>
+        </ul>
+      </header>
+
+      <div class="container_home">
+        <img
+          class="home_img4 no_select_image"
+          src="assets/bitcoin_vector.png"
+          width="200"
+          height="200"
+          alt="vetor de bitcoin"
+        />
+        <img
+          class="home_img1 no_select_image"
+          src="assets/vector_card1.png"
+          width="500"
+          height="500"
+          alt="vetor de cartão de crédito 1"
+        />
+        <div class="home_text">
+          <h1>Bem vindo ao Finance OP</h1>
+          <h6>Manipular suas finanças nunca foi tão fácil!</h6>
+          <h6>
+            Com FinOP vc consegue monitorar todos seus gastos e planejamentos!
+          </h6>
         </div>
-
-        <div class="container_info">
-            <div class="frase_um">
-                <h1>•Registre seus gastos diários aqui para ter um melhor controle de seu dinheiro</h1>
-                <p>
-                    Você pode realizar diversos Registros de seus gastos para poder ter um controle claro, limpo e organizado.<br>
-                    Além de poder ter um histórico de compras e transações
-                </p>
-            </div>
-            <div class="frase_dois">
-                <h1>•Tenha acesso a diversos gráficos e tabelas para facilitar a análise de suas finanças</h1>
-                <p>
-                    Com nossos gráficos super otimizados você pode analisar seu gasto e renda de forma clara e sem complicações,<br>
-                    e entender o porque o dinheiro não sobra no fim do mês
-                </p>
-            </div>
-            <div class="frase_tres">
-                <h1>•Tenha o controle de toda a sua rede em um só lugar da forma mais otimizada possível</h1>
-                <p>
-                    Além de possuir todos os benefícios anteriores de forma gratuita, você também poderá receber dicas de<br>
-                    nossa IA sobre como melhorar seu controle de renda, tornando sua vida ainda mais fácil!<br>
-                    Isso sem contar que nossa plataforma possui integrações para lhe manter atualizado sobre<br>
-                    novas noticias no mercado e ações 
-                </p>
-            </div>
+        <div class="home_button">
+          <a class="home_button_link" href="pages/signup.html">Saiba Mais</a>
         </div>
+        <img
+          class="home_img2 no_select_image"
+          src="assets/vector_card2.png"
+          width="500"
+          height="500"
+          alt="vetor de cartão de crédito 2"
+        />
+        <img
+          class="home_img3 no_select_image"
+          src="assets/graphic_vector.png"
+          width="250"
+          height="250"
+          alt="vetor de dinheiro"
+        />
+      </div>
 
-        <footer>
-            <div class="div_createdby">
-                <h1>Created By: <a href="https://github.com/SantosVicente/">Vicente dos Santos Silva</a> and <a href="https://github.com/vct-h-dias/">Victor Hugo Montanari Dias</a></h1>
-                <h1>Copyright © 2023</h1>
-            </div>
-        </footer>
+      <div class="container_info">
+        <div
+          class="frase_um"
+          data-aos="fade-up"
+          data-aos-delay="50"
+          data-aos-duration="350"
+        >
+          <h1>
+            •Registre seus gastos diários aqui para ter um melhor controle de
+            seu dinheiro
+          </h1>
+          <p>
+            Você pode realizar diversos Registros de seus gastos para poder ter
+            um controle claro, limpo e organizado.<br />
+            Além de poder ter um histórico de compras e transações
+          </p>
+        </div>
+        <div
+          class="frase_dois"
+          data-aos="fade-up"
+          data-aos-delay="50"
+          data-aos-duration="350"
+        >
+          <h1>
+            •Tenha acesso a diversos gráficos e tabelas para facilitar a análise
+            de suas finanças
+          </h1>
+          <p>
+            Com nossos gráficos super otimizados você pode analisar seu gasto e
+            renda de forma clara e sem complicações,<br />
+            e entender o porque o dinheiro não sobra no fim do mês
+          </p>
+        </div>
+        <div
+          class="frase_tres"
+          data-aos="fade-up"
+          data-aos-delay="50"
+          data-aos-duration="350"
+        >
+          <h1>
+            •Tenha o controle de toda a sua rede em um só lugar da forma mais
+            otimizada possível
+          </h1>
+          <p>
+            Além de possuir todos os benefícios anteriores de forma gratuita,
+            você também poderá receber dicas de<br />
+            nossa IA sobre como melhorar seu controle de renda, tornando sua
+            vida ainda mais fácil!<br />
+            Isso sem contar que nossa plataforma possui integrações para lhe
+            manter atualizado sobre<br />
+            novas noticias no mercado e ações
+          </p>
+        </div>
+      </div>
+
+      <footer>
+        <div class="div_createdby">
+          <h1>
+            Created By:
+            <a href="https://github.com/SantosVicente/"
+              >Vicente dos Santos Silva</a
+            >
+            and
+            <a href="https://github.com/vct-h-dias/"
+              >Victor Hugo Montanari Dias</a
+            >
+          </h1>
+          <h1>Copyright © 2023</h1>
+        </div>
+      </footer>
     </div>
 
+    <script src="scripts/general.js"></script>
     <script src="scripts/scripts_home.js"></script>
-</body>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
 </html>
