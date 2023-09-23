@@ -105,7 +105,7 @@ function isLogged(data) {
   if (isLoggedIn) {
     signUpButton.style.display = "none";
     loginButton.style.display = "none";
-    homeButton.href = "http://127.0.0.1:5500/pages/home.html"; // Defina o link para a outra página desejada
+    homeButton.href = "http://localhost:5500/pages/home.html"; // Defina o link para a outra página desejada
     loggedInDiv.style.display = "flex";
 
     const image = document.createElement("img");
@@ -137,7 +137,7 @@ function isLogged(data) {
   } else {
     signUpButton.style.display = "block";
     loginButton.style.display = "block";
-    homeButton.href = "http://127.0.0.1:5500/"; // Defina o link de volta para a página inicial
+    homeButton.href = "http://localhost:5500/"; // Defina o link de volta para a página inicial
     loggedInDiv.style.display = "none";
   }
 }
