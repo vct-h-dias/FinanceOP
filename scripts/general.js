@@ -1,6 +1,11 @@
 //verifica se o usuário esta logado ou nao
 var isLoggedIn = false;
 
+document.addEventListener("DOMContentLoaded", function () {
+  auth();
+  checkLoginAndRedirect();
+});
+
 //recebe os dados dos formulários
 document.getElementById("submit").addEventListener("click", async function (e) {
   e.preventDefault();
@@ -84,6 +89,7 @@ async function logar(data) {
       document.getElementById("error-login").style.display = "none";
 
       console.log(responseData);
+      localStorage.setItem("user", JSON.stringify(responseData));
       isLoggedIn = true;
       isLogged(responseData);
     } else {
@@ -94,17 +100,38 @@ async function logar(data) {
   }
 }
 
+function auth() {
+  //const token = localStorage.getItem("token");
+  const usuario = JSON.parse(localStorage.getItem("user"));
+
+  console.log(usuario);
+
+  if (/*token &&*/ usuario) {
+    // Usuário autenticado
+    isLoggedIn = true;
+    isLogged(usuario);
+  }
+}
+
 //realiza as alterações na página conforme o usuário esteja logado ou não, falta adicionar
 // a verificação de cookie ao inves de variavel
 function isLogged(data) {
-  const signUpButton = document.getElementById("signup-button");
-  const loginButton = document.getElementById("login-button");
+  let signUpButton;
+  let loginButton;
+
+  if (isLoggedIn === true && window.location.pathname !== "/pages/home.html") {
+    signUpButton = document.getElementById("signup-button");
+    loginButton = document.getElementById("login-button");
+  }
+
   const homeButton = document.getElementById("home-button");
   const loggedInDiv = document.getElementById("logged-in-div");
 
   if (isLoggedIn) {
-    signUpButton.style.display = "none";
-    loginButton.style.display = "none";
+    if (signUpButton && loginButton) {
+      signUpButton.style.display = "none";
+      loginButton.style.display = "none";
+    }
     homeButton.href = "http://localhost:5500/pages/home.html"; // Defina o link para a outra página desejada
     loggedInDiv.style.display = "flex";
 
@@ -135,14 +162,16 @@ function isLogged(data) {
 
     //window.location.href = "../pages/home.html";
   } else {
-    signUpButton.style.display = "block";
-    loginButton.style.display = "block";
+    if (signUpButton && loginButton) {
+      signUpButton.style.display = "block";
+      loginButton.style.display = "block";
+    }
     homeButton.href = "http://localhost:5500/"; // Defina o link de volta para a página inicial
     loggedInDiv.style.display = "none";
   }
 }
 
-/*function checkLoginAndRedirect() {
+function checkLoginAndRedirect() {
   const currentRoute = window.location.pathname;
 
   if (isLoggedIn && (currentRoute === '/pages/signin.html' || currentRoute === '/pages/signup.html')) {
@@ -153,7 +182,3 @@ function isLogged(data) {
     window.location.href = '/';
   }
 }
-
-// Verificar o estado de login e redirecionar na carga da página
-window.addEventListener('DOMContentLoaded', checkLoginAndRedirect);
-*/
