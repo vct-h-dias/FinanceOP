@@ -92,6 +92,7 @@ async function logar(data) {
       localStorage.setItem("user", JSON.stringify(responseData));
       isLoggedIn = true;
       isLogged(responseData);
+      window.location.href = "../pages/home.html";
     } else {
       document.getElementById("error-login").style.display = "block";
     }
@@ -153,6 +154,15 @@ function isLogged(data) {
 
     const heading1 = document.createElement("h6");
     heading1.textContent = "Clique aqui para Sair";
+
+    
+    heading1.id = "signout-button";
+
+    heading1.onclick = function() {
+      localStorage.removeItem("user");
+      isLoggedIn = false;
+      window.location.href = "../index.html";
+    };
 
     divContainer.appendChild(greetingParagraph);
     divContainer.appendChild(heading1);

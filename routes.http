@@ -1,0 +1,22 @@
+# @name create-user
+
+POST http://localhost:5000/user.php
+Content-Type: application/json
+
+{
+    "email": "teste3@gmail.com",
+    "username": "testee3",
+    "password": "12345678"
+}
+
+
+###
+
+# @name login
+POST http://localhost:5000/auth.php
+Content-Type: application/json
+
+{
+    "email": "teste2@gmail.com",
+    "password": "12345678"
+}

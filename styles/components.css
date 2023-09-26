@@ -139,6 +139,10 @@ header .signup a:hover {
   display: none;
 }
 
+#signout-button {
+  cursor: pointer;
+}
+
 #check {
   display: none;
 }
