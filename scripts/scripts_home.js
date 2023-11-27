@@ -1,37 +1,111 @@
-/*
-// <![CDATA[  <-- For SVG support
-if ('WebSocket' in window) {
-    (function () {
-        function refreshCSS() {
-            var sheets = [].slice.call(document.getElementsByTagName("link"));
-            var head = document.getElementsByTagName("head")[0];
-            for (var i = 0; i < sheets.length; ++i) {
-                var elem = sheets[i];
-                var parent = elem.parentElement || head;
-                parent.removeChild(elem);
-                var rel = elem.rel;
-                if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-                    var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-                    elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-                }
-                parent.appendChild(elem);
-            }
-        }
-        var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-        var address = protocol + window.location.host + window.location.pathname + '/ws';
-        var socket = new WebSocket(address);
-        socket.onmessage = function (msg) {
-            if (msg.data == 'reload') window.location.reload();
-            else if (msg.data == 'refreshcss') refreshCSS();
-        };
-        if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-            console.log('Live reload enabled.');
-            sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-        }
-    })();
-}
-else {
-    console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-}
-// ]]>
-*/
+//OBTENDO DADOS DO USUÁRIO
+document.addEventListener("DOMContentLoaded", function () {
+  var userData = localStorage.getItem("user");
+
+  if (userData) {
+    var user = JSON.parse(userData);
+
+    const url = `http://localhost:5000/transactions.php?user_id=${user.data.id}`;
+
+    const requestOptions = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    fetch(url, requestOptions)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Transações do usuário:", data.transactions);
+      })
+      .catch((error) => {
+        console.error("Erro ao obter transações:", error);
+      });
+  } else {
+    console.error("Informações do usuário não encontradas no localStorage");
+  }
+});
+
+//GRÁFICOS
+document.addEventListener("DOMContentLoaded", function () {
+  // Dados de exemplo (substitua pelos seus dados reais)
+  var transactionData = [10, 20, 30, 15, 25];
+
+  // Gráfico de Barra
+  var barCtx = document.getElementById("barChart").getContext("2d");
+  var barChart = new Chart(barCtx, {
+    type: "bar",
+    data: {
+      labels: [
+        "Categoria 1",
+        "Categoria 2",
+        "Categoria 3",
+        "Categoria 4",
+        "Categoria 5",
+      ],
+      datasets: [
+        {
+          label: "Transações por Categoria",
+          data: transactionData,
+          backgroundColor: [
+            "rgba(255, 99, 132, 0.2)",
+            "rgba(54, 162, 235, 0.2)",
+            "rgba(255, 206, 86, 0.2)",
+            "rgba(75, 192, 192, 0.2)",
+            "rgba(153, 102, 255, 0.2)",
+          ],
+          borderColor: [
+            "rgba(255, 99, 132, 1)",
+            "rgba(54, 162, 235, 1)",
+            "rgba(255, 206, 86, 1)",
+            "rgba(75, 192, 192, 1)",
+            "rgba(153, 102, 255, 1)",
+          ],
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+
+  var pieCtx = document.getElementById("pieChart").getContext("2d");
+  var pieChart = new Chart(pieCtx, {
+    type: "pie",
+    data: {
+      labels: [
+        "Categoria 1",
+        "Categoria 2",
+        "Categoria 3",
+        "Categoria 4",
+        "Categoria 5",
+      ],
+      datasets: [
+        {
+          data: transactionData,
+          backgroundColor: [
+            "rgba(255, 99, 132, 0.2)",
+            "rgba(54, 162, 235, 0.2)",
+            "rgba(255, 206, 86, 0.2)",
+            "rgba(75, 192, 192, 0.2)",
+            "rgba(153, 102, 255, 0.2)",
+          ],
+          borderColor: [
+            "rgba(255, 99, 132, 1)",
+            "rgba(54, 162, 235, 1)",
+            "rgba(255, 206, 86, 1)",
+            "rgba(75, 192, 192, 1)",
+            "rgba(153, 102, 255, 1)",
+          ],
+          borderWidth: 1,
+        },
+      ],
+    },
+  });
+});

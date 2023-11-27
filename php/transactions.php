@@ -19,6 +19,46 @@ if (!$conn) {
 $json = file_get_contents('php://input');
 $data = json_decode($json, true);
 
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+  if (isset($_GET['user_id'])) {
+    $user_id = $_GET['user_id'];
+
+    $query = "SELECT * FROM transactions WHERE user_id='$user_id'";
+
+    $result = mysqli_query($conn, $query);
+
+    if ($result) {
+      $transactions = array();
+
+      while ($row = mysqli_fetch_assoc($result)) {
+        $transactions[] = $row;
+      }
+
+      http_response_code(200);
+      echo json_encode(array(
+        'success' => true,
+        'error' => null,
+        'transactions' => $transactions
+      ));
+      exit();
+    } else {
+      http_response_code(500);
+      echo json_encode(array(
+        'success' => false,
+        'error' => "Erro ao obter transações"
+      ));
+      exit();
+    }
+  } else {
+    http_response_code(400);
+    echo json_encode(array(
+      'success' => false,
+      'error' => "Campo 'user_id' ausente"
+    ));
+    exit();
+  }
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if (isset($data['user_id']) && isset($data['description']) && isset($data['value']) && isset($data['month'])) {
     $user_id = $data['user_id'];

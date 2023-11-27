@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../styles/basics.css" />
     <link rel="stylesheet" href="../styles/components.css" />
     <link rel="stylesheet" href="../styles/styles_user.css" />
+    <link rel="stylesheet" href="../styles/styles_home.css" />
 
     <!--fontes-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -27,7 +28,10 @@
     />
 
     <title>Home - Finop</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
+
   <body>
     <div class="father">
       <header>
@@ -60,16 +64,34 @@
               id="home-button"
               class="hover-underline-animation control-checked"
               href="/pages/home.html"
-              >Home</a>
+              >Home</a
+            >
           </li>
           <li></li>
           <li></li>
-          <li id="logged-in-div" style="display: block;"></li>
+          <li id="logged-in-div" style="display: block"></li>
         </ul>
       </header>
 
       <div class="container">
-        <p>Você Está Logado!</p>
+        <div class="graphs">
+          <h1>Gráficos</h1>
+
+          <div class="graphs_content">
+            <canvas id="barChart" width="400" height="200"></canvas>
+            <canvas id="pieChart" width="400" height="200"></canvas>
+          </div>
+        </div>
+
+        <div class="actions">
+          <p>Bem Vindo ao Dashboard!</p>
+
+          <ul>
+            <li>Cadastrar Transação</li>
+            <li>Editar Transação</li>
+            <li>Excluir Transação</li>
+          </ul>
+        </div>
       </div>
 
       <footer>
@@ -90,5 +112,6 @@
     </div>
 
     <script src="../scripts/general.js"></script>
+    <script src="../scripts/scripts_home.js"></script>
   </body>
 </html>

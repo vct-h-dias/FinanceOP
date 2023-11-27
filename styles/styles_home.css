@@ -136,6 +136,28 @@ html {
   padding-right: 10rem;
 }
 
+.graphs {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  padding: 10rem 5rem 5rem 5rem;
+  //background-color: #3f3a4c;
+  width: 80%;
+  height: 100vh;
+}
+
+.actions {
+  padding: 10rem 5rem 5rem 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: start;
+  //background-color: #9a324f;
+  width: 20%;
+  height: 100vh;
+}
+
 /*Responsividade MQ*/
 
 @media (max-width: 1588px) {
@@ -166,7 +188,7 @@ html {
     width: 225px;
     height: 225px;
   }
-  
+
   .container_home .home_img4 {
     left: 225px;
     width: 180px;
@@ -358,20 +380,19 @@ html {
   }
 }
 
-
 @media (max-width: 913px) {
   .container_home .home_img1 {
     display: none;
   }
-  
+
   .container_home .home_img2 {
     display: none;
   }
-  
+
   .container_home .home_img3 {
     display: none;
   }
-  
+
   .container_home .home_img4 {
     display: none;
   }
@@ -395,7 +416,7 @@ html {
     width: 125px;
     height: 125px;
   }
-  
+
   .container_home .home_img4 {
     left: 125px;
     width: 120px;
