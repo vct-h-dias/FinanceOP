@@ -136,6 +136,70 @@ html {
   padding-right: 10rem;
 }
 
+.graphs {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  padding: 10rem 5rem 5rem 5rem;
+  //background-color: #3f3a4c;
+  width: 80%;
+  height: 100vh;
+}
+
+.actions {
+  padding: 10rem 5rem 5rem 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  width: 20%;
+  height: 100vh;
+  gap: 2rem;
+  border-left: 1px solid var(--Gray1);
+}
+
+.actions p {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.actions ul {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+  justify-content: start;
+}
+
+.actions li {
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 600;
+  background-color: var(--Purple3);
+  padding: 1rem 2rem;
+  text-align: center;
+  border-radius: 0.9rem;
+  color: var(--White);
+  width: 100%;
+  list-style: none;
+  margin-bottom: 2rem;
+  transition: all 0.3s;
+}
+
+.actions li:hover {
+  background-color: var(--Purple2);
+}
+
+.graphs_content {
+  margin: 5rem 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90%;
+  width: 100%;
+}
+
 /*Responsividade MQ*/
 
 @media (max-width: 1588px) {
@@ -166,7 +230,7 @@ html {
     width: 225px;
     height: 225px;
   }
-  
+
   .container_home .home_img4 {
     left: 225px;
     width: 180px;
@@ -229,6 +293,17 @@ html {
 }
 
 @media (max-width: 768px) {
+  .container {
+    flex-direction: column-reverse;
+  }
+
+  .actions {
+    width: 100%;
+    height: 10rem;
+    border-left: none;
+    border-top: 1px solid var(--Blue1);
+  }
+
   .home_text {
     display: flex;
     flex-direction: column;
@@ -358,20 +433,19 @@ html {
   }
 }
 
-
 @media (max-width: 913px) {
   .container_home .home_img1 {
     display: none;
   }
-  
+
   .container_home .home_img2 {
     display: none;
   }
-  
+
   .container_home .home_img3 {
     display: none;
   }
-  
+
   .container_home .home_img4 {
     display: none;
   }
@@ -395,10 +469,107 @@ html {
     width: 125px;
     height: 125px;
   }
-  
+
   .container_home .home_img4 {
     left: 125px;
     width: 120px;
     height: 120px;
   }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: var(--Black2);
+  border: 1px solid var(--Blue1);
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 20%;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 900;
+}
+
+.modal .modal-content h2,
+.modal-delete .modal-content-delete h2 {
+  margin-bottom: 10px;
+}
+
+.modal .modal-content label,
+.modal-delete .modal-content-delete label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.modal .modal-content button {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  border: 1px solid var(--Blue1);
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 16px;
+  background-color: var(--Purple3);
+  transition: all 0.3s;
+}
+
+//faça o hover somente se o botão não estiver desabilitado
+.modal .modal-content button:hover {
+  background-color: var(--Purple2);
+}
+
+.modal-delete {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: var(--Black2);
+  border: 1px solid var(--Blue1);
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.modal .modal-content select,
+.modal .modal-content input,
+.modal-delete .modal-content-delete select {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  border: 1px solid var(--Blue1);
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 16px;
+  background-color: var(--Black2);
+}
+
+.overlay-delete {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 900;
+}
+
+.modal-content-delete {
+  text-align: center;
 }

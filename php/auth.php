@@ -21,15 +21,13 @@ if (!$conn) {
 
 //post route
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-  
-  if(isset($data['email'])){
+  if (isset($data['email'])) {
     $email = $data['email'];
 
     $query = "SELECT * FROM USERS WHERE email='$email'";
     $res = mysqli_query($conn, $query);
 
-    if(!($res->num_rows)){
+    if (!($res->num_rows)) {
       http_response_code(404);
       echo json_encode(array(
         'sucess' => false,
@@ -37,28 +35,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       ));
       exit();
     }
-
   } else {
-    
+
     http_response_code(400);
     echo json_encode(array(
       'sucess' => false,
       'error' => "Missing 'email' field"
     ));
     exit();
-
   }
 
-  if(isset($data['password'])) $password = $data['password'];
-  else{
-    
+  if (isset($data['password'])) $password = $data['password'];
+  else {
+
     http_response_code(400);
     echo json_encode(array(
       'sucess' => false,
       'error' => "Missing 'password' field"
     ));
     exit();
-
   }
 
   $query = "SELECT * FROM USERS WHERE email='$email' AND senha='$password'";
@@ -67,8 +62,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   if ($res) {
     // echo $res->num_rows; 
-    if($res->num_rows){
-  
+    if ($res->num_rows) {
+
       http_response_code(200);
       echo json_encode(array(
         'sucess' => true,
@@ -77,8 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'error' => null
       ));
       exit();
-
-    }else {
+    } else {
 
       http_response_code(401);
       echo json_encode(array(
@@ -90,4 +84,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
   }
 }
-?>
