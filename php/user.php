@@ -24,15 +24,13 @@ if (!$conn) {
 
 //post route
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-  
-  if(isset($data['email'])){
+  if (isset($data['email'])) {
     $email = $data['email'];
 
     $query = "SELECT * FROM USERS WHERE email='$email'";
     $res = mysqli_query($conn, $query);
 
-    if($res->num_rows){
+    if ($res->num_rows) {
       http_response_code(409);
       echo json_encode(array(
         'sucess' => false,
@@ -40,40 +38,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       ));
       exit();
     }
-
   } else {
-    
+
     http_response_code(400);
     echo json_encode(array(
       'sucess' => false,
       'error' => "Missing 'email' field"
     ));
     exit();
-
   }
 
-  if(isset($data['username'])) $username = $data['username'];
-  else{
-    
+  if (isset($data['username'])) $username = $data['username'];
+  else {
+
     http_response_code(400);
     echo json_encode(array(
       'sucess' => false,
       'error' => "Missing 'username' field"
     ));
     exit();
-
   }
 
-  if(isset($data['password'])) $password = $data['password'];
-  else{
-    
+  if (isset($data['password'])) $password = $data['password'];
+  else {
+
     http_response_code(400);
     echo json_encode(array(
       'sucess' => false,
       'error' => "Missing 'password' field"
     ));
     exit();
-
   }
 
   $query = "INSERT INTO USERS (email, username, senha) VALUES ('$email', '$username', '$password')";
@@ -81,6 +75,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $res = mysqli_query($conn, $query);
 
   if ($res) {
+    $query = "SELECT id FROM USERS WHERE email='$email' AND senha='$password'";
+    $res = mysqli_query($conn, $query);
+
+    //caso o usuário tenha sido criado, use o id para criar todos os meses do ano
+    $id = mysqli_fetch_assoc($res)['id'];
+
+    for ($i = 1; $i <= 12; $i++) {
+      $query = "INSERT INTO TRANSACTIONS (user_id, description, value, month) VALUES ('$id', 'Saldo inicial', 0, '$i')";
+      $res = mysqli_query($conn, $query);
+    }
+
     http_response_code(200);
     echo json_encode(array(
       'sucess' => true,
@@ -89,5 +94,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit();
   }
 }
-
-?>

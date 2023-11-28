@@ -1,3 +1,64 @@
+var transactions = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+const dict = {
+  Janeiro: 1,
+  Fevereiro: 2,
+  Março: 3,
+  Abril: 4,
+  Maio: 5,
+  Junho: 6,
+  Julho: 7,
+  Agosto: 8,
+  Setembro: 9,
+  Outubro: 10,
+  Novembro: 11,
+  Dezembro: 12,
+};
+
+const setupViz = () => {
+  let chartStatus = Chart.getChart("barChart"); // <canvas> id
+  if (chartStatus != undefined) {
+    chartStatus.destroy();
+  }
+
+  var barCtx = document.getElementById("barChart").getContext("2d");
+  var barChart = new Chart(barCtx, {
+    type: "bar",
+    data: {
+      labels: [
+        "Janeiro",
+        "Fevereiro",
+        "Março",
+        "Abril",
+        "Maio",
+        "Junho",
+        "Julho",
+        "Agosto",
+        "Setembro",
+        "Outubro",
+        "Novembro",
+        "Dezembro",
+      ],
+      datasets: [
+        {
+          label: "Transações por Mês",
+          data: transactions,
+          backgroundColor: ["rgba(153, 102, 255, 0.2)"],
+          borderColor: ["rgba(153, 102, 255, 1)"],
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+};
+
 //OBTENDO DADOS DO USUÁRIO
 document.addEventListener("DOMContentLoaded", function () {
   var userData = localStorage.getItem("user");
@@ -18,6 +79,16 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((response) => response.json())
       .then((data) => {
         console.log("Transações do usuário:", data.transactions);
+        data.transactions.map((transaction) => {
+          transactions[parseInt(transaction.month) - 1] += parseFloat(
+            transaction.value
+          );
+
+          console.log(transactions);
+        });
+      })
+      .then(() => {
+        setupViz();
       })
       .catch((error) => {
         console.error("Erro ao obter transações:", error);
@@ -27,85 +98,146 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-//GRÁFICOS
-document.addEventListener("DOMContentLoaded", function () {
-  // Dados de exemplo (substitua pelos seus dados reais)
-  var transactionData = [10, 20, 30, 15, 25];
+function openModal() {
+  document.getElementById("modal").style.display = "block";
+  document.getElementById("overlay").style.display = "block";
+}
 
-  // Gráfico de Barra
-  var barCtx = document.getElementById("barChart").getContext("2d");
-  var barChart = new Chart(barCtx, {
-    type: "bar",
-    data: {
-      labels: [
-        "Categoria 1",
-        "Categoria 2",
-        "Categoria 3",
-        "Categoria 4",
-        "Categoria 5",
-      ],
-      datasets: [
-        {
-          label: "Transações por Categoria",
-          data: transactionData,
-          backgroundColor: [
-            "rgba(255, 99, 132, 0.2)",
-            "rgba(54, 162, 235, 0.2)",
-            "rgba(255, 206, 86, 0.2)",
-            "rgba(75, 192, 192, 0.2)",
-            "rgba(153, 102, 255, 0.2)",
-          ],
-          borderColor: [
-            "rgba(255, 99, 132, 1)",
-            "rgba(54, 162, 235, 1)",
-            "rgba(255, 206, 86, 1)",
-            "rgba(75, 192, 192, 1)",
-            "rgba(153, 102, 255, 1)",
-          ],
-          borderWidth: 1,
-        },
-      ],
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true,
-        },
-      },
-    },
-  });
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+  document.getElementById("overlay").style.display = "none";
 
-  var pieCtx = document.getElementById("pieChart").getContext("2d");
-  var pieChart = new Chart(pieCtx, {
-    type: "pie",
-    data: {
-      labels: [
-        "Categoria 1",
-        "Categoria 2",
-        "Categoria 3",
-        "Categoria 4",
-        "Categoria 5",
-      ],
-      datasets: [
-        {
-          data: transactionData,
-          backgroundColor: [
-            "rgba(255, 99, 132, 0.2)",
-            "rgba(54, 162, 235, 0.2)",
-            "rgba(255, 206, 86, 0.2)",
-            "rgba(75, 192, 192, 0.2)",
-            "rgba(153, 102, 255, 0.2)",
-          ],
-          borderColor: [
-            "rgba(255, 99, 132, 1)",
-            "rgba(54, 162, 235, 1)",
-            "rgba(255, 206, 86, 1)",
-            "rgba(75, 192, 192, 1)",
-            "rgba(153, 102, 255, 1)",
-          ],
-          borderWidth: 1,
-        },
-      ],
+  document.getElementById("numberInput").value = "";
+  document.getElementById("months").value = "";
+
+  const confirmBtn = document.getElementById("confirmBtn");
+  confirmBtn.setAttribute("disabled", true);
+}
+
+function checkInputs() {
+  const month = document.getElementById("months").value;
+  const number = document.getElementById("numberInput").value;
+  const confirmBtn = document.getElementById("confirmBtn");
+
+  if (month && number !== "") {
+    confirmBtn.removeAttribute("disabled");
+  } else {
+    confirmBtn.setAttribute("disabled", true);
+  }
+}
+
+// function confirmAction() {
+//   const month = document.getElementById("months").value;
+//   const number = document.getElementById("numberInput").value;
+
+//   alert(`Mês selecionado: ${month}\nNúmero digitado: ${number}`);
+//   closeModal();
+// }
+
+// DELETE
+function openDeleteModal() {
+  document.getElementById("modal-delete").style.display = "block";
+  document.getElementById("overlay-delete").style.display = "block";
+}
+
+function closeDeleteModal() {
+  document.getElementById("modal-delete").style.display = "none";
+  document.getElementById("overlay-delete").style.display = "none";
+
+  document.getElementById("months-delete").value = "";
+
+  const confirmBtn = document.getElementById("confirmBtn-delete");
+  confirmBtn.setAttribute("disabled", true);
+}
+
+function checkDeleteInputs() {
+  const month = document.getElementById("months-delete").value;
+  const confirmBtn = document.getElementById("confirmBtn-delete");
+
+  if (month) {
+    confirmBtn.removeAttribute("disabled");
+  } else {
+    confirmBtn.setAttribute("disabled", true);
+  }
+}
+
+// function confirmDeleteAction() {
+//   const month = document.getElementById("months-delete").value;
+
+//   alert(`Mês selecionado: ${month}`);
+//   closeDeleteModal();
+// }
+
+const confirmAction = () => {
+  var userData = localStorage.getItem("user");
+  var user = JSON.parse(userData);
+
+  const url = "http://localhost:5000/transactions.php";
+
+  const m = document.getElementById("months").value;
+  // console.log(dict[m]);
+
+  const transa = document.getElementById("numberInput").value;
+
+  const requestOptions = {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
     },
-  });
-});
+    body: JSON.stringify({
+      user_id: user.data.id,
+      month: dict[m],
+      value: transa,
+    }),
+  };
+
+  fetch(url, requestOptions)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Transação atualizada com sucesso:", data);
+      transactions[dict[m] - 1] = transa;
+      setupViz();
+      closeModal();
+
+      document.getElementById("numberInput").value = "";
+      document.getElementById("months").value = "";
+    })
+    .catch((error) => {
+      console.error("Erro ao atualizar transação:", error);
+    });
+};
+
+const confirmDeleteAction = () => {
+  var userData = localStorage.getItem("user");
+  var user = JSON.parse(userData);
+
+  const url = "http://localhost:5000/transactions.php";
+
+  const m = document.getElementById("months-delete").value;
+
+  const requestOptions = {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      user_id: user.data.id,
+      month: dict[m],
+    }),
+  };
+
+  fetch(url, requestOptions)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Transação deletada com sucesso:", data);
+      transactions[dict[m] - 1] = 0;
+      setupViz();
+      closeModal();
+
+      document.getElementById("months-delete").value = "";
+      closeDeleteModal();
+    })
+    .catch((error) => {
+      console.error("Erro ao atualizar transação:", error);
+    });
+};

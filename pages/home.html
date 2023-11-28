@@ -78,8 +78,7 @@
           <h1>Gráficos</h1>
 
           <div class="graphs_content">
-            <canvas id="barChart" width="400" height="200"></canvas>
-            <canvas id="pieChart" width="400" height="200"></canvas>
+            <canvas id="barChart" width="800" height="600"></canvas>
           </div>
         </div>
 
@@ -87,12 +86,78 @@
           <p>Bem Vindo ao Dashboard!</p>
 
           <ul>
-            <li>Cadastrar Transação</li>
-            <li>Editar Transação</li>
-            <li>Excluir Transação</li>
+            <li onclick="openModal()">Editar Transação</li>
+            <li onclick="openDeleteModal()">Excluir Transação</li>
           </ul>
         </div>
       </div>
+
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <h2>Selecione um mês e digite um número</h2>
+          <label for="months">Mês:</label>
+          <select id="months" onchange="checkInputs()">
+            <option value="">Selecione um mês</option>
+            <option value="Janeiro">Janeiro</option>
+            <option value="Fevereiro">Fevereiro</option>
+            <option value="Março">Março</option>
+            <option value="Abril">Abril</option>
+            <option value="Maio">Maio</option>
+            <option value="Junho">Junho</option>
+            <option value="Julho">Julho</option>
+            <option value="Agosto">Agosto</option>
+            <option value="Setembro">Setembro</option>
+            <option value="Outubro">Outubro</option>
+            <option value="Novembro">Novembro</option>
+            <option value="Dezembro">Dezembro</option>
+          </select>
+          <br />
+          <label for="numberInput">Valor:</label>
+          <input type="number" id="numberInput" oninput="checkInputs()" />
+          <br />
+          <button id="confirmBtn" onclick="confirmAction()" disabled>
+            Confirmar
+          </button>
+        </div>
+      </div>
+
+      <div id="overlay" class="overlay" onclick="closeModal()"></div>
+
+      <div id="modal-delete" class="modal">
+        <div class="modal-content">
+          <h2>Selecione um mês</h2>
+          <label for="months">Mês:</label>
+          <select id="months-delete" onchange="checkDeleteInputs()">
+            <option value="">Selecione um mês</option>
+            <option value="Janeiro">Janeiro</option>
+            <option value="Fevereiro">Fevereiro</option>
+            <option value="Março">Março</option>
+            <option value="Abril">Abril</option>
+            <option value="Maio">Maio</option>
+            <option value="Junho">Junho</option>
+            <option value="Julho">Julho</option>
+            <option value="Agosto">Agosto</option>
+            <option value="Setembro">Setembro</option>
+            <option value="Outubro">Outubro</option>
+            <option value="Novembro">Novembro</option>
+            <option value="Dezembro">Dezembro</option>
+          </select>
+          <br />
+          <button
+            id="confirmBtn-delete"
+            onclick="confirmDeleteAction()"
+            disabled
+          >
+            Deletar
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="overlay-delete"
+        class="overlay"
+        onclick="closeDeleteModal()"
+      ></div>
 
       <footer>
         <div class="div_createdby">

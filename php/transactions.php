@@ -96,23 +96,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
-  if (isset($data['transaction_id'])) {
-    $transaction_id = $data['transaction_id'];
+  if (isset($data['month']) && isset($data['user_id'])) {
     $updateFields = array();
-
-    if (isset($data['description'])) {
-      $description = $data['description'];
-      $updateFields[] = "description='$description'";
-    }
 
     if (isset($data['value'])) {
       $value = $data['value'];
       $updateFields[] = "value='$value'";
-    }
-
-    if (isset($data['month'])) {
-      $month = $data['month'];
-      $updateFields[] = "month='$month'";
     }
 
     if (empty($updateFields)) {
@@ -126,7 +115,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
 
     $updateFieldsString = implode(', ', $updateFields);
 
-    $query = "UPDATE transactions SET $updateFieldsString WHERE id='$transaction_id'";
+    $month = $data['month'];
+    $user_id = $data['user_id'];
+    $query = "UPDATE transactions SET $updateFieldsString WHERE month='$month' AND user_id='$user_id'";
 
     $res = mysqli_query($conn, $query);
 
@@ -156,14 +147,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
-  if (isset($data['transaction_id'])) {
-    $transaction_id = $data['transaction_id'];
+  if (isset($data['user_id']) && isset($data['month'])) {
 
-    $query = "DELETE FROM transactions WHERE id='$transaction_id'";
+    $user_id = $data['user_id'];
+    $month = $data['month'];
+
+    $query = "DELETE FROM transactions WHERE user_id=$user_id AND month=$month";
 
     $res = mysqli_query($conn, $query);
 
     if ($res) {
+
+
+      $query = "INSERT INTO transactions (user_id, description, value, month) VALUES ($user_id, 'Saldo inicial', 0, $month)";
+      $res = mysqli_query($conn, $query);
+
       http_response_code(200);
       echo json_encode(array(
         'success' => true,
